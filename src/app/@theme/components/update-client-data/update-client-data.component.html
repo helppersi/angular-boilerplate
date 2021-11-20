@@ -1,0 +1,37 @@
+<section class="container">
+    <form class="formulario" (ngSubmit)="updateClient()">
+      <h2 class="formulario_titulo">Update </h2>
+
+      <div class="form-field">
+        <label class="form-field_label" for="id-update">ID</label>
+        <input class="form-field_input" id="id-update" type="number" [(ngModel)]="id" name="id-update" required/>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field_label" for="nome-update">Nome</label>
+        <input class="form-field_input" id="nome-update" type="text" [(ngModel)]="name" name="nome-update" required/>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field_label" for="Email-update">Email</label>
+        <input class="form-field_input" id="Email-update" type="email" [(ngModel)]="email" name="Email-update" required/>
+      </div>
+
+      <div class="form-field">
+        <label class="form-field_label" for="Telefone-update">Telefone</label>
+        <input class="form-field_input" id="Telefone-update" type="tel" [(ngModel)]="phone" name="Telefone-update" required/>
+      </div>
+
+      <fieldset class="form-fieldset" name="status">
+        <legend>Status</legend>
+        <select [(ngModel)]="status" name=status required>
+            <option>Ativo</option>
+            <option>Inativo</option>
+        </select>
+    </fieldset>
+
+      <div class="botao-wrapper">
+        <button class="botao" type="submit">Atualizar dados</button>
+      </div>
+    </form>
+</section>

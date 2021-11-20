@@ -1,0 +1,18 @@
+<table class="tabela" *ngIf="this.clientes">
+    <thead class="tabela__cabecalho">
+      <th class="tabela__cabecalho__conteudo">ID</th>
+      <th class="tabela__cabecalho__conteudo">Nome</th>
+      <th class="tabela__cabecalho__conteudo">Email</th>
+      <th class="tabela__cabecalho__conteudo">Telefone</th>
+      <th class="tabela__cabecalho__conteudo">Status</th>
+    </thead>
+    <tbody>
+      <tr class="tabela__linha" *ngFor ="let cliente of clientes">
+        <td class="tabela__conteudo">{{cliente.id}}</td>
+        <td class="tabela__conteudo">{{cliente.name}}</td>
+        <td class="tabela__conteudo">{{cliente.email}}</td>
+        <td class="tabela__conteudo">{{cliente.phone}}</td>
+        <td class="tabela__conteudo">{{cliente.status}}</td>
+      </tr>
+    </tbody>
+</table>
