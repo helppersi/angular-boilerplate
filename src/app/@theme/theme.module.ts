@@ -6,20 +6,23 @@ import { FormsModule } from "@angular/forms";
 import { ClientesComponent } from './components/clientes/clientes.component';
 import { CommonModule } from '@angular/common';
 import { UpdateClientDataComponent } from './components/update-client-data/update-client-data.component';
+import { DeleteClientDataComponent } from './components/delete-client-data/delete-client-data.component';
 
 @NgModule({
 	declarations: [
 		CadastroComponent,
 		ExampleComponent,
 		ClientesComponent,
-		UpdateClientDataComponent
+		UpdateClientDataComponent,
+		DeleteClientDataComponent
 	],
 	providers: [],
     exports: [
 		CadastroComponent,
 		ExampleComponent,
         ClientesComponent,
-        UpdateClientDataComponent
+        UpdateClientDataComponent,
+        DeleteClientDataComponent
     ],
     imports:[
         FormsModule,
