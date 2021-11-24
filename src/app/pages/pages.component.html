@@ -1,3 +1,19 @@
 <h1>Cadastro de Clientes</h1>
-<p-menubar [model]="items"></p-menubar>
+
+<div class="dls-menu-item" style="float: left;">
+    <button (click)="inserirCliente()">Inserir Cliente</button>
+</div>
+
+<div id="comp-render" *ngIf="displayInserirCliente">
+    <app-cliente-incluir></app-cliente-incluir>
+</div>
+
+<div class="dls-menu-item" style="float: left;">
+    <button (click)="consultarCliente()">Consultar Cliente</button>
+</div>
+
+<div id="comp-render" *ngIf="displayConsultarCliente">
+    <app-cliente-consultar></app-cliente-consultar>
+</div>
+
 <router-outlet></router-outlet>

@@ -6,7 +6,6 @@ import { PagesComponent } from "./pages.component";
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ClienteConsultarComponent } from './clientes/cliente-consultar/cliente-consultar.component';
-import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
 	imports: [
@@ -14,7 +13,6 @@ import { MenubarModule } from 'primeng/menubar';
         ThemeModule,
         CommonModule,
         FormsModule,
-        MenubarModule
 	],
 	declarations: [
 		PagesComponent,

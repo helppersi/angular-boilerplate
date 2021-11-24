@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { MenuItem } from "primeng/api";
 
 @Component({
 	selector: 'app-pages',
@@ -8,27 +7,22 @@ import { MenuItem } from "primeng/api";
 })
 export class PagesComponent {
 
-    title = 'Angular Boilerplate';
-    items: MenuItem[];
+    displayInserirCliente = false;
+    displayConsultarCliente = false;
 
-    // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
-    ngOnInit(): void{
-      this.items = [
-        {
-          label:'Clientes',
-          items: [
-            {
-              label: 'Novo',
-              icon: 'pi pi-fw pi-plus',
-              routerLink: ['/incluir-cliente']
-            },
-            {
-              label: 'Consultar',
-              icon: 'pi pi-fw pi-search',
-              routerLink: ['/consultar-cliente']
-            }
-          ]
-        }
-      ];
+    inserirCliente(): void {
+      if(this.displayInserirCliente){
+        this.displayInserirCliente = false;
+      }else{
+        this.displayInserirCliente = true;
+      }
     }
+
+    consultarCliente(): void {
+        if(this.displayConsultarCliente){
+            this.displayConsultarCliente = false;
+          }else{
+            this.displayConsultarCliente = true;
+          }
+      }
 }
