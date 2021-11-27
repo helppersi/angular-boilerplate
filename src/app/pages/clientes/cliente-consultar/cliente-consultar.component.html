@@ -2,11 +2,23 @@
     <h2>
       Consulta de cliente
     </h2>
-    <div ng-app="myApp" ng-controller="customersCtrl">
-    <table>
-        <tr ng-repeat= "x in records">
-          <td>{{ cliente.Name }}</td>
-          <td>{{ x.Country }}</td>
-        </tr>
-      </table>
+
+    <form #form="ngForm" (ngSubmit)="consultarCliente()">
+      <div>
+        <label for="nome">Nome</label>
+        <input
+            type="search"
+            class="form-control" id="nome"
+            required
+            [(ngModel)]="cliente.nome"
+            name="nome">
+      </div>
+      <div>
+        <button class="button" type="submit">Consultar</button>
+      </div>
+    </form>
+    <p>{{clienteRetorno.nome}}</p>
+    <p>{{clienteRetorno.telefone}}</p>
+    <p>{{clienteRetorno.email}}</p>
+    <p>{{clienteRetorno.status}}</p>
   </div>

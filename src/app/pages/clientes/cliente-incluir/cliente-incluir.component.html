@@ -1,85 +1,35 @@
-<!-- <div class="card">
-    <h1>Incluir Cliente</h1>
-    <form #form="ngForm" (ngSubmit)="salvar(form)">
-        <div class="fluid formgrid grid">
-            <div class="field col-6 md-6">
-                <label for="cpf">Nome</label>
-                <input required id="cpf" name="cpf" [(ngModel)]="cliente.nome" type="text">
-            </div>
-            <div class="field col-6 md-6">
-                <label for="email">E-mail</label>
-                <input required id="email" name="email" [(ngModel)]="cliente.email" type="text">
-            </div>
-            <div class="field col-6">
-                <label for="telefone">Telefone</label>
-                <input  id="telefone" name="telefone" [(ngModel)]="cliente.telefone" type="text">
-            </div>
-            <div class="field col-6 md-6">
-                <label for="status">Status</label>
-                <input id="status" name="status" [(ngModel)]="cliente.status" type="text">
-            </div>
-            <div class="col-12 md-12">
-                <button class="button" type="submit">Purchase</button>
-            </div>
-        </div>
-    </form>
-</div> -->
-{{ cliente | json }}
-<div class="form-group col-6 col-sm-4" style="align-items: center;" >
-
+<!-- <div class="form-group col-6 col-sm-4" style="align-items: center;" >
+    <link rel="stylesheet" href="cliente-incluir.component.css"> -->
     <form #form="ngForm" (ngSubmit)="salvar(form)">
 
-        <div>
-            <label for="nome">Nome</label>
-            <input
-                type="text"
-                class="form-control" id="nome"
-                required
-                [(ngModel)]="cliente.nome"
-                name="nome">
-        </div>
+                <div class="form-floating">
+                    <textarea class="form-control" 
+                        placeholder="Nome" 
+                        id="Nome"
+                        [(ngModel)]="cliente.nome">
+                    </textarea>
+                    <label for="Nome"></label>
 
-        <div>
-            <label for="email">E-mail</label>
-            <input
-                type="text"
-                class="form-control" id="email"
-                required
-                [(ngModel)]="cliente.email"
-                name="email">
-        </div>
+                    <textarea class="form-control" placeholder="Telefone" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea"></label>
 
-        <div>
-            <label for="telefone">Telefone</label>
-            <input
-                type="text"
-                class="form-control" id="telefone"
-                required
-                [(ngModel)]="cliente.telefone"
-                name="telefone">
-        </div>
+                    <textarea class="form-control" placeholder="E-mail" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea"></label>
 
-        <div>
-            <label for="status">Status</label>
-            <input
-                type="checkbox"
-                class="form-control" id="status"
-                required
-                [(ngModel)]="cliente.status"
-                name="status">
-        </div>
+                </div>
+                
+        
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">Cliente Ativo</label>
+                </div>
 
-        <div>
-            <button class="button" type="submit">Salvar</button>
-        </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">Cliente Inativo</label>
+                </div>
+                
+                    <button class="button" type="submit">Cadastre</button>
+                
     </form>
-</div>
-
-<!-- <div class="form-group">
-  <label for="power">Hero Power</label>
-  <select class="form-control"  id="power"
-          required
-          [(ngModel)]="model.power" name="power">
-    <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
-  </select>
-</div> -->
+<!-- </div> -->

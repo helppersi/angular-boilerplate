@@ -10,26 +10,36 @@ export class ClienteService {
     localStorage.setItem(cliente.nome.toString(), JSON.stringify(cliente));
   }
 
-  public consultar(): Cliente[]{
+  public listar(): Cliente[]{
     const clientes: Cliente[] = [];
-    console.log(localStorage.length);
     for(let i = 0; i < localStorage.length; i++){
       const localKey: string | null = localStorage.key(i);
       if(localKey){
         const item: string | null = localStorage.getItem(localKey);
         if(item){
-          clientes.push(JSON.parse(item));
+          const cliente: Cliente = JSON.parse(item);
+          clientes.push(cliente);
         }
       }
     }
     return clientes;
   }
 
-//   public recuperar(cpf: string): Cliente{
-//     const key: string | null = localStorage.getItem(cpf)
-//     if(key){
-//       return JSON.parse(key);
-//     }
-//     return new Cliente();
-//   }
+  public consultar(nome: string): Cliente{
+    const key: string | null = localStorage.getItem(nome)
+    if(key){
+      return JSON.parse(key);
+    }
+    return new Cliente();
+  }
+
+  public excluir(nome: string): void{
+    // let clientes: Array<Cliente> = this.listar();
+    // clientes.forEach(cliente => {
+    //   clientes.splice(1);
+    // });
+    // let item = document.getElementById("idLinhaConteudo"+ this.listarCliente);
+    // item.parentNode.removeChild(item);
+    localStorage.removeItem(nome);
+  }
 }

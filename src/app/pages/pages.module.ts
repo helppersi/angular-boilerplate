@@ -5,19 +5,23 @@ import { PagesRoutingModule } from "./pages-routing.module";
 import { PagesComponent } from "./pages.component";
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ClienteListarComponent } from './clientes/cliente-listar/cliente-listar.component';
 import { ClienteConsultarComponent } from './clientes/cliente-consultar/cliente-consultar.component';
+import { ClienteExcluirComponent } from './clientes/cliente-excluir/cliente-excluir.component';
 
 @NgModule({
 	imports: [
-        PagesRoutingModule,
-        ThemeModule,
-        CommonModule,
-        FormsModule,
+                PagesRoutingModule,
+                ThemeModule,
+                CommonModule,
+                FormsModule,
 	],
 	declarations: [
 		PagesComponent,
-        ClienteIncluirComponent,
-        ClienteConsultarComponent
+                ClienteIncluirComponent,
+                ClienteListarComponent,
+                ClienteConsultarComponent,
+                ClienteExcluirComponent
 	],
 	providers: []
 })

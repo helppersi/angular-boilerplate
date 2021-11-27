@@ -1,19 +1,55 @@
-<h1>Cadastro de Clientes</h1>
+<head> 
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="pages.component.scss">
+    </head>
 
-<div class="dls-menu-item" style="float: left;">
-    <button (click)="inserirCliente()">Inserir Cliente</button>
-</div>
 
-<div id="comp-render" *ngIf="displayInserirCliente">
-    <app-cliente-incluir></app-cliente-incluir>
-</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            
+            <li><button routerLink="cliente-incluir" type="button" class="btn btn-outline-success">Inclua</button></li>
+            <li><button routerLink="cliente-listar" type="button" class="btn btn-outline-success">Liste</button></li>
+            <li><button routerLink="cliente-consultar" type="button" class="btn btn-outline-success">Consulte</button></li>
+            <li><button routerLink="cliente-excluir" type="button" class="btn btn-outline-success">Exclua</button></li>
 
-<div class="dls-menu-item" style="float: left;">
-    <button (click)="consultarCliente()">Consultar Cliente</button>
-</div>
-
-<div id="comp-render" *ngIf="displayConsultarCliente">
-    <app-cliente-consultar></app-cliente-consultar>
-</div>
-
+            
+        </ul>
+    </div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+</nav>
 <router-outlet></router-outlet>
