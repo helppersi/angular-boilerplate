@@ -11,15 +11,17 @@ export class ClienteConsultarComponent implements OnInit {
 
   public cliente: Cliente;
   public clienteRetorno: Cliente;
+  public mostrarCliente: boolean = false;
 
   constructor(private clienteService: ClienteService) { }
 
   ngOnInit(): void {
     this.cliente = new Cliente();
+    this.clienteRetorno = null;
   }
 
-  consultarCliente(){
-    console.log(this.cliente.nome);
+  consultarCliente(): void{
     this.clienteRetorno = this.clienteService.consultar(this.cliente.nome);
+    this.mostrarCliente = true;
   }
 }

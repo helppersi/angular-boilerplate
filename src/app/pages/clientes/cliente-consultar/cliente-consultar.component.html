@@ -17,8 +17,10 @@
         <button class="button" type="submit">Consultar</button>
       </div>
     </form>
-    <p>{{clienteRetorno.nome}}</p>
-    <p>{{clienteRetorno.telefone}}</p>
-    <p>{{clienteRetorno.email}}</p>
-    <p>{{clienteRetorno.status}}</p>
+    <div *ngIf="mostrarCliente">
+        <p>{{clienteRetorno.nome}}</p>
+        <p>{{clienteRetorno.telefone}}</p>
+        <p>{{clienteRetorno.email}}</p>
+        <p>{{clienteRetorno.status}}</p>
+    </div>
   </div>

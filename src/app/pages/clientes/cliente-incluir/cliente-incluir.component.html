@@ -1,35 +1,69 @@
-<!-- <div class="form-group col-6 col-sm-4" style="align-items: center;" >
-    <link rel="stylesheet" href="cliente-incluir.component.css"> -->
-    <form #form="ngForm" (ngSubmit)="salvar(form)">
+<form #form="ngForm" (ngSubmit)="salvar(form)">
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input
+            class="form-control"
+            required
+            id="nome"
+            name="nome"
+            type="text"
+            placeholder="Insira o nome"
+            [(ngModel)]="cliente.nome"
+            aria-describedby="nomeAjuda">
+        <small id="nomeAjuda" class="form-text text-muted">Insira seu nome completo</small>
+    </div>
+    <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <input
+            class="form-control"
+            required
+            id="telefone"
+            name="telefone"
+            type="text"
+            placeholder="Insira o telefone"
+            [(ngModel)]="cliente.telefone"
+            aria-describedby="nomeTelefone">
+        <small id="nomeTelefone" class="form-text text-muted">Exemplo (34) 9.9999-9999</small>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input
+            class="form-control"
+            required
+            id="email"
+            name="email"
+            type="text"
+            placeholder="Insira o email"
+            [(ngModel)]="cliente.email"
+            aria-describedby="nomeEmail">
+        <small id="nomeEmail" class="form-text text-muted">Insira email@email.com</small>
+    </div>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        required
+        type="checkbox"
+        id="status"
+        name="nome"
+        [(ngModel)]="cliente.status">
+      <label class="form-check-label" for="status">Ativo/Inativo</label>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
 
-                <div class="form-floating">
-                    <textarea class="form-control" 
-                        placeholder="Nome" 
-                        id="Nome"
-                        [(ngModel)]="cliente.nome">
-                    </textarea>
-                    <label for="Nome"></label>
-
-                    <textarea class="form-control" placeholder="Telefone" id="floatingTextarea"></textarea>
-                    <label for="floatingTextarea"></label>
-
-                    <textarea class="form-control" placeholder="E-mail" id="floatingTextarea"></textarea>
-                    <label for="floatingTextarea"></label>
-
-                </div>
-                
-        
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">Cliente Ativo</label>
-                </div>
-
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">Cliente Inativo</label>
-                </div>
-                
-                    <button class="button" type="submit">Cadastre</button>
-                
-    </form>
-<!-- </div> -->
+    <div class="row"  *ngIf="showMsgSucesso">
+        <div class="col-xs-12">
+            <p class="alert alert-success">
+                <strong>Cliente incluido!</strong>
+            </p>
+        </div>
+    </div>
+    <div class="row"  *ngIf="showMsgErro">
+        <div class="col-xs-12">
+            <p class="alert alert-danger">
+                <strong>Erro ao incluir cliente!</strong>
+            </p>
+        </div>
+    </div>
+</form>

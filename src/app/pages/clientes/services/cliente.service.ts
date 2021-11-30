@@ -26,20 +26,15 @@ export class ClienteService {
   }
 
   public consultar(nome: string): Cliente{
-    const key: string | null = localStorage.getItem(nome)
-    if(key){
-      return JSON.parse(key);
+    const value: string | null = localStorage.getItem(nome);
+    if(value){
+        return JSON.parse(value);
     }
     return new Cliente();
   }
 
   public excluir(nome: string): void{
-    // let clientes: Array<Cliente> = this.listar();
-    // clientes.forEach(cliente => {
-    //   clientes.splice(1);
-    // });
-    // let item = document.getElementById("idLinhaConteudo"+ this.listarCliente);
-    // item.parentNode.removeChild(item);
+
     localStorage.removeItem(nome);
   }
 }

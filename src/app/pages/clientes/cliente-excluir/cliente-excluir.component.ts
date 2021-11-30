@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from 'src/app/shared/cliente';
 import { ClienteService } from '../services/cliente.service';
 
 @Component({
@@ -10,16 +9,19 @@ import { ClienteService } from '../services/cliente.service';
 export class ClienteExcluirComponent implements OnInit {
 
   public nome: string;
+  public showMsg: boolean;
 
     constructor(private clienteService: ClienteService) { }
 
     ngOnInit(): void {
       this.nome = '';
+      this.showMsg = false;
     }
-    
-    excluirCliente(){
+
+    excluirCliente(): void{
       this.clienteService.excluir(this.nome);
+      this.showMsg = true;
     }
-    
-    
+
+
 }

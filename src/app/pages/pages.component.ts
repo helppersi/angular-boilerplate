@@ -1,68 +1,20 @@
-import { Component } from "@angular/core";
+import { ClienteService } from './clientes/services/cliente.service';
+import { Component, OnInit } from "@angular/core";
+import { Cliente } from '../shared/cliente';
 
 @Component({
 	selector: 'app-pages',
 	styleUrls: ['pages.component.scss'],
 	templateUrl: 'pages.component.html',
 })
-export class PagesComponent {
+export class PagesComponent implements OnInit{
 
-    displayInserirCliente = false;
-    displayConsultarCliente = false;
-    displayListarCliente = false;
-    displayExcluirCliente = false;
+    public clientes: Cliente[] = [];
+    public headers = ["Name", "Telefone", "Email", "Status"];
 
-    mostrarComponenteInserirCliente(): void {
-      if(this.displayInserirCliente){
-        this.displayInserirCliente = false;
-        this.displayConsultarCliente = false;
-        this.displayListarCliente = false;
-        this.displayExcluirCliente = false;
-      }else{
-        this.displayInserirCliente = true;
-        this.displayConsultarCliente = false;
-        this.displayListarCliente = false;
-        this.displayExcluirCliente = false;
-      }
-    }
-    mostrarComponenteListarCliente(): void {
-      if(this.displayListarCliente){
-        this.displayInserirCliente = false;
-        this.displayConsultarCliente = false;
-        this.displayListarCliente = false;
-        this.displayExcluirCliente = false;
-      }else{
-        this.displayInserirCliente = false;
-        this.displayConsultarCliente = false;
-        this.displayListarCliente = true;
-        this.displayExcluirCliente = false;
-        }
-    }
-    mostrarComponenteConsultarCliente(): void {
-        if(this.displayConsultarCliente){
-          this.displayInserirCliente = false;
-          this.displayConsultarCliente = false;
-          this.displayListarCliente = false;
-          this.displayExcluirCliente = false;
-        }else{
-          this.displayInserirCliente = false;
-          this.displayConsultarCliente = true;
-          this.displayListarCliente = false;
-          this.displayExcluirCliente = false;
-          }
-    }
+    constructor (private clienteService: ClienteService){}
 
-    mostrarComponenteExcluirCliente():void{
-      if(this.displayExcluirCliente){
-        this.displayInserirCliente = false;
-          this.displayConsultarCliente = false;
-          this.displayListarCliente = false;
-          this.displayExcluirCliente = false;
-        }else{
-          this.displayInserirCliente = false;
-          this.displayConsultarCliente = false;
-          this.displayListarCliente = false;
-          this.displayExcluirCliente = true;
-      }
+    ngOnInit(): void {
+        this.clientes = this.clienteService.listar();
     }
 }

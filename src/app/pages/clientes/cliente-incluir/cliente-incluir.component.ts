@@ -10,7 +10,9 @@ import { ClienteService } from '../services/cliente.service';
 })
 export class ClienteIncluirComponent implements OnInit{
 
-    cliente: Cliente;
+    public cliente: Cliente;
+    public showMsgSucesso: boolean = false;
+    public showMsgErro: boolean = false;
 
     constructor(private clienteService: ClienteService) { }
 
@@ -20,12 +22,12 @@ export class ClienteIncluirComponent implements OnInit{
 
     public salvar(form: NgForm): void{
         console.log(form);
-        // this.messageService.clear;
+
         if(form.valid){
             this.clienteService.salvar(this.cliente);
-            // this.messageService.add({severity: 'success', summary: 'Informação', detail: 'Cliente cadastrado com sucesso!'})
+            this.showMsgSucesso = true;
         }else{
-            // this.messageService.add({severity: 'error', summary: 'Erro', detail: 'Preencha os campos obrigatórios (*)!'});
+            this.showMsgErro = true;
             console.log('ERRO');
         }
     }
